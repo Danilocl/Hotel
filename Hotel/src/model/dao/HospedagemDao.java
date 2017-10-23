@@ -1,9 +1,18 @@
 package model.dao;
 
-public class HospedagemDao {
+import java.util.ArrayList;
 
-private static HospedagemDao instancia;
+import javax.persistence.Query;
 
+import model.Hospedagem;
+
+public class HospedagemDao extends DaoGenerico<Hospedagem>{
+
+	private static HospedagemDao instancia;
+	
+	private HospedagemDao() {
+		super();
+	}
 	
 	public static HospedagemDao getInstancia() {
 
@@ -14,6 +23,13 @@ private static HospedagemDao instancia;
 
 			return instancia;
 		}
+	}
+	
+	public ArrayList<Object> test() {
+		Query q = entityManager.createQuery("SELECT h.gastoExtras FROM Hospedagem h");
+		return (ArrayList<Object>) q.getResultList();
+		
+		
 	}
 
 }

@@ -3,9 +3,11 @@ package model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Entity
 public class Hospedagem {
 
 	@Id
@@ -27,6 +29,10 @@ public class Hospedagem {
 	private float valor;
 	@Column
 	private float gastoExtras;
+	
+	public Hospedagem() {
+		
+	}
 
 	public Hospedagem(int hospedagem_id, String cliente, int qntHospede, Date chekin, Date checkout, int noites,
 			float tipoUh, float valor, float gastoExtras) {

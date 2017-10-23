@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public abstract class DaoGenerico<T> {
 
-	private EntityManager entityManager;
+	protected EntityManager entityManager;
 
 	protected DaoGenerico() {
 		entityManager = getEntityManager();
@@ -18,7 +18,7 @@ public abstract class DaoGenerico<T> {
 
 	protected EntityManager getEntityManager() {
 
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("faculdade");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("hotel");
 		if (entityManager == null) {
 			entityManager = factory.createEntityManager();
 		}
@@ -43,7 +43,7 @@ public abstract class DaoGenerico<T> {
 			entityManager.persist(t);
 			entityManager.getTransaction().commit();
 		} catch (Exception ex) {
-			// faz com que a transação volte um ponto antes caso ocorra algum
+			// faz com que a transaï¿½ï¿½o volte um ponto antes caso ocorra algum
 			// erro
 			ex.printStackTrace();
 			entityManager.getTransaction().rollback();
@@ -57,7 +57,7 @@ public abstract class DaoGenerico<T> {
 			entityManager.merge(t);
 			entityManager.getTransaction().commit();
 		} catch (Exception ex) {
-			// faz com que a transação volte um ponto antes caso ocorra algum
+			// faz com que a transaï¿½ï¿½o volte um ponto antes caso ocorra algum
 			// erro
 			ex.printStackTrace();
 			entityManager.getTransaction().rollback();
@@ -72,7 +72,7 @@ public abstract class DaoGenerico<T> {
 			entityManager.remove(t);
 			entityManager.getTransaction().commit();
 		} catch (Exception ex) {
-			// faz com que a transação volte um ponto antes caso ocorra algum
+			// faz com que a transaï¿½ï¿½o volte um ponto antes caso ocorra algum
 			// erro
 			ex.printStackTrace();
 			entityManager.getTransaction().rollback();
@@ -84,7 +84,7 @@ public abstract class DaoGenerico<T> {
 			T t = searchForID(clazz, id);
 			remove(t);
 		} catch (Exception ex) {
-			// faz com que a transação volte um ponto antes caso ocorra algum
+			// faz com que a transaï¿½ï¿½o volte um ponto antes caso ocorra algum
 			// erro
 			ex.printStackTrace();
 			entityManager.getTransaction().rollback();
