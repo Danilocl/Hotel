@@ -12,23 +12,24 @@ public class Hospedagem {
 
 	@Id
 	@GeneratedValue
+	@Column(name="hospedagem_id")
 	private int hospedagem_id;
-	@Column
+	@Column(name="cliente")
 	private String cliente;
-	@Column
+	@Column(name="quantidade_de_hospede")
 	private int qntHospede;
-	@Column
+	@Column(name="checkin")
 	private Date chekin;
-	@Column
+	@Column(name="checkout")
 	private Date checkout;
-	@Column
+	@Column(name="noites")
 	private int noites;
-	@Column
+	@Column(name="tipo_Uh")
 	private float tipoUh;
-	@Column
+	@Column(name="R$UH")
 	private float valor;
-	@Column
-	private float gastoExtras;
+	@Column(name="gastos_extras")
+	private float gastosExtras;
 	
 	public Hospedagem() {
 		
@@ -45,7 +46,7 @@ public class Hospedagem {
 		this.noites = noites;
 		this.tipoUh = tipoUh;
 		this.valor = valor;
-		this.gastoExtras = gastoExtras;
+		this.gastosExtras = gastoExtras;
 	}
 
 	public int getHospedagem_id() {
@@ -113,11 +114,11 @@ public class Hospedagem {
 	}
 
 	public float getGastoExtras() {
-		return gastoExtras;
+		return gastosExtras;
 	}
 
 	public void setGastoExtras(float gastoExtras) {
-		this.gastoExtras = gastoExtras;
+		this.gastosExtras = gastoExtras;
 	}
 
 }

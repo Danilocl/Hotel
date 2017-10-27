@@ -26,7 +26,7 @@ public class HospedagemDao extends DaoGenerico<Hospedagem>{
 	}
 	
 	public ArrayList<Object> test() {
-		Query q = entityManager.createQuery("SELECT h.gastoExtras FROM Hospedagem h");
+		Query q = entityManager.createQuery("SELECT h.valor FROM Hospedagem h");
 		return (ArrayList<Object>) q.getResultList();
 		
 		

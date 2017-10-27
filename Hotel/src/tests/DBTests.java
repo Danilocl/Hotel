@@ -12,7 +12,7 @@ public class DBTests {
 		HospedagemDao hDao = HospedagemDao.getInstancia();
 
 		ArrayList<Object> data = hDao.test();
-		
+		System.out.println(data);
 		for (Object h : data) {
 			System.out.println(h);
 		}
