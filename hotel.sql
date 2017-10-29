@@ -49,35 +49,6 @@ INSERT INTO `Hospedagem` VALUES (1,'Arlindo Dominguez',2,'2017-01-02 00:00:00','
 UNLOCK TABLES;
 
 --
--- Table structure for table `Hotel`
---
-
-DROP TABLE IF EXISTS `Hotel`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Hotel` (
-  `idHotel` int(11) NOT NULL,
-  `gastoExtra` int(11) DEFAULT NULL,
-  `gastoTotal` int(11) DEFAULT NULL,
-  `mediaDiaria` int(11) DEFAULT NULL,
-  `mediaNoites` int(11) DEFAULT NULL,
-  `mediaOcupacao` int(11) DEFAULT NULL,
-  `mediaPessoas` int(11) DEFAULT NULL,
-  `mediaReservas` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idHotel`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Hotel`
---
-
-LOCK TABLES `Hotel` WRITE;
-/*!40000 ALTER TABLE `Hotel` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Hotel` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `hibernate_sequence`
 --
 
@@ -98,33 +69,6 @@ LOCK TABLES `hibernate_sequence` WRITE;
 INSERT INTO `hibernate_sequence` VALUES (1),(1);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `output`
---
-
-DROP TABLE IF EXISTS `output`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `output` (
-  `num_medio_reservas` int(11) DEFAULT NULL,
-  `medi_noites` int(11) DEFAULT NULL,
-  `diaria_media` int(11) DEFAULT NULL,
-  `gasto_extra` int(11) DEFAULT NULL,
-  `gasto_total` int(11) DEFAULT NULL,
-  `media_pessoas` int(11) DEFAULT NULL,
-  `ocupacao_media` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `output`
---
-
-LOCK TABLES `output` WRITE;
-/*!40000 ALTER TABLE `output` DISABLE KEYS */;
-/*!40000 ALTER TABLE `output` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -135,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-27  0:31:40
+-- Dump completed on 2017-10-29  2:33:28

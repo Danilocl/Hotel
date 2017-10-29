@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
 	private void build() {
 		setLayout(new GridBagLayout());
 		buildButtonPanel();
-		// buildTable();
+		buildTable();
 		setSize(300, 200);
 		setMinimumSize(new Dimension(400, 300));
 		setLocationRelativeTo(null);
@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
 	private void buildTable() {
 		JPanel panel = new JPanel(new GridBagLayout());
 		table = new JTable();
-		// table.setModel(new HotelTableModel());
+		table.setModel(new OutputTableModel());
 		JScrollPane scrollPane = new JScrollPane(table);
 		panel.add(scrollPane, new GBC(0, 1).gridwh(2, 1).both());
 		add(panel, new GBC(0, 0).both().insets(10, 5, 5, 0));
@@ -47,16 +47,19 @@ public class MainFrame extends JFrame {
 	private void buildButtonPanel() {
 
 		JPanel panel = new JPanel(new GridBagLayout());
-		JButton gerar = new JButton("Gerar");
-		panel.add(gerar, new GBC(0, 1).top().horizontal());
-
-		gerar.addActionListener(new ActionListener() {
-
+		
+		JButton btMediaReservas = new JButton("Média de reservas");
+		btMediaReservas.addActionListener(new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				new DialogMediaReservas();
 			}
 		});
+		panel.add(btMediaReservas, new GBC(0, 0));
+		
+
+		
 		add(panel, new GBC(1, 0).insets(5, 0, 7, 6));
 	}
 

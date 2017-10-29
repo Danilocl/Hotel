@@ -1,8 +1,8 @@
 package model.dao;
 
-import model.Hotel;
+import model.Output;
 
-public class HotelDao extends DaoGenerico<Hotel> {
+public class HotelDao extends DaoGenerico<Output> {
 
 	private static HotelDao instancia;
 

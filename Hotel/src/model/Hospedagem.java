@@ -19,7 +19,7 @@ public class Hospedagem {
 	@Column(name="quantidade_de_hospede")
 	private int qntHospede;
 	@Column(name="checkin")
-	private Date chekin;
+	private Date checkin;
 	@Column(name="checkout")
 	private Date checkout;
 	@Column(name="noites")
@@ -41,7 +41,7 @@ public class Hospedagem {
 		this.hospedagem_id = hospedagem_id;
 		this.cliente = cliente;
 		this.qntHospede = qntHospede;
-		this.chekin = chekin;
+		this.checkin = chekin;
 		this.checkout = checkout;
 		this.noites = noites;
 		this.tipoUh = tipoUh;
@@ -74,11 +74,11 @@ public class Hospedagem {
 	}
 
 	public Date getChekin() {
-		return chekin;
+		return checkin;
 	}
 
 	public void setChekin(Date chekin) {
-		this.chekin = chekin;
+		this.checkin = chekin;
 	}
 
 	public Date getCheckout() {

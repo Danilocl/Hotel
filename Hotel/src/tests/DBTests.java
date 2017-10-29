@@ -11,8 +11,8 @@ public class DBTests {
 		
 		HospedagemDao hDao = HospedagemDao.getInstancia();
 
-		ArrayList<Object> data = hDao.test();
-		System.out.println(data);
+		ArrayList<Object> data = hDao.mediaReservasMes("'2017-5-1'", "'2017-5-31'");
+		System.out.println(data.size());
 		for (Object h : data) {
 			System.out.println(h);
 		}
