@@ -21,7 +21,7 @@ import control.Operacoes;
  * @author Emmanuel
  *
  */
-public class DialogMediaReservas extends JDialog {
+public class DialogMediaGastos extends JDialog {
 
 	/**
 	 * {@code Table} que vai ser populada.
@@ -35,7 +35,7 @@ public class DialogMediaReservas extends JDialog {
 	/**
 	 * Construtor da classe.
 	 */
-	public DialogMediaReservas() {
+	public DialogMediaGastos() {
 		buildDialog();
 	}
 
@@ -46,7 +46,7 @@ public class DialogMediaReservas extends JDialog {
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
 		setLocationRelativeTo(null);
-		setTitle("Média de Reservas");
+		setTitle("Média de Gastos Extras");
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -59,14 +59,14 @@ public class DialogMediaReservas extends JDialog {
 	}
 
 	/**
-	 * Método que cria e exibe a média anual de reservas.
+	 * Método que cria e exibe a média anual de gastos extras.
 	 */
 	private void buildMediaAnual() {
 		JLabel labelMediaAnual = new JLabel("Média anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.
-		tfMediaAnual.setText(Operacoes.reservaAnual());
+		tfMediaAnual.setText(Operacoes.gastosAnual());
 		tfMediaAnual.setEditable(false);
 		panel.add(tfMediaAnual, new GBC(1, 0).horizontal());
 		add(panel, new GBC(0, 0));
@@ -82,7 +82,7 @@ public class DialogMediaReservas extends JDialog {
 		OutputTableModel opTableModel = new OutputTableModel();
 		// Chama o método para popular a tabela. Perceba que na passagem de parametro eu
 		// chamo outro método.
-		opTableModel.adicionaTableModel(Operacoes.reservaMensal());
+		opTableModel.adicionaTableModel(Operacoes.gastosMensal());
 		// Setando o modelo que ela terá.
 		table.setModel(opTableModel);
 		// Instanciando um JScrollPane e setando a tabela em seu contrutor para que o

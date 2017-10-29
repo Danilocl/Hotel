@@ -33,8 +33,8 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 	 *            Data inicial da contagem.
 	 * @param dataFinal
 	 *            Data final da contagem.
-	 * @return Lista de Object. Coloque Object por ser mais genérico e eu posso
-	 *         converto-lo depois,
+	 * @return Lista de Object. Coloquei Object por ser mais genérico e eu posso
+	 *         converto-lo depois.
 	 */
 	public ArrayList<Object> mediaReservasMes(String dataInicial, String dataFinal) {
 		// Declarando uma {Query} e criando a instrução que será inserido no banco.
@@ -44,6 +44,63 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 		// Object pois o método por padrão retorna um {List}.
 		return (ArrayList<Object>) q.getResultList();
 
+	}
+
+	/**
+	 * Método que retorna o número de noites que cada reserva possui no período
+	 * selecionado.
+	 * 
+	 * @param dataInicial
+	 *            Data inicial da contagem.
+	 * @param dataFinal
+	 *            Data final da contagem.
+	 * @return Lista de Integer. Coloquei Integer por ser mais apropriado.
+	 */
+	public ArrayList<Integer> mediaNoitesMes(String dataInicial, String dataFinal) {
+		// Declarando uma {Query} e criando a instrução que será inserido no banco.
+		Query q = entityManager.createQuery("SELECT h.noites FROM Hospedagem h WHERE h.checkin >= " + dataInicial
+				+ " AND h.checkin <= " + dataFinal);
+		// Retornando a lista de resultados. Preciso fazer o casting para ArrayList de
+		// Object pois o método por padrão retorna um {List}.
+		return (ArrayList<Integer>) q.getResultList();
+	}
+
+	/**
+	 * Método que retorna o valor das diarias que cada reserva possui no período
+	 * selecionado.
+	 * 
+	 * @param dataInicial
+	 *            Data inicial da contagem.
+	 * @param dataFinal
+	 *            Data final da contagem.
+	 * @return Lista de Float. Coloquei Float por ser mais apropriado.
+	 */
+	public ArrayList<Float> mediaDiariaMes(String dataInicial, String dataFinal) {
+		// Declarando uma {Query} e criando a instrução que será inserido no banco.
+		Query q = entityManager.createQuery("SELECT h.valor FROM Hospedagem h WHERE h.checkin >= " + dataInicial
+				+ " AND h.checkin <= " + dataFinal);
+		// Retornando a lista de resultados. Preciso fazer o casting para ArrayList de
+		// Object pois o método por padrão retorna um {List}.
+		return (ArrayList<Float>) q.getResultList();
+	}
+
+	/**
+	 * Método que retorna o valor dos gastos extras que cada reserva possui no
+	 * período selecionado.
+	 * 
+	 * @param dataInicial
+	 *            Data inicial da contagem.
+	 * @param dataFinal
+	 *            Data final da contagem.
+	 * @return Lista de Float. Coloquei Float por ser mais apropriado.
+	 */
+	public ArrayList<Float> mediaGastosMes(String dataInicial, String dataFinal) {
+		// Declarando uma {Query} e criando a instrução que será inserido no banco.
+		Query q = entityManager.createQuery("SELECT h.gastosExtras FROM Hospedagem h WHERE h.checkin >= " + dataInicial
+				+ " AND h.checkin <= " + dataFinal);
+		// Retornando a lista de resultados. Preciso fazer o casting para ArrayList de
+		// Object pois o método por padrão retorna um {List}.
+		return (ArrayList<Float>) q.getResultList();
 	}
 
 }
