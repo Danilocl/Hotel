@@ -46,7 +46,7 @@ public class DialogMediaDiaria extends JDialog {
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
 		setLocationRelativeTo(null);
-		setTitle("MÃ©dia de Diaria");
+		setTitle("Média de Diaria");
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();

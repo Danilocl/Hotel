@@ -46,26 +46,28 @@ public class DialogMediaReservas extends JDialog {
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
 		setLocationRelativeTo(null);
-		setTitle("Média de Reservas");
+		setTitle("M�dia de Reservas");
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(200, 300);
+		setSize(400, 300);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(true);
 		setModal(true);
 		setVisible(true);
+		pack();
+		
 	}
 
 	/**
-	 * Método que cria e exibe a média anual de reservas.
+	 * Metodo que cria e exibe a media anual de reservas.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("Média anual: ");
+		JLabel labelMediaAnual = new JLabel("M�dia anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
-		// Chamando o método que faz as contas para pegar o valor anual.
+		// Chamando o metodo que faz as contas para pegar o valor anual.
 		tfMediaAnual.setText(Operacoes.reservaAnual());
 		tfMediaAnual.setEditable(false);
 		panel.add(tfMediaAnual, new GBC(1, 0).horizontal());
