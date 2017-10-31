@@ -86,6 +86,39 @@ public class MainFrame extends JFrame {
 			}
 		});
 		panel.add(btMediaGastos, new GBC(0, 3));
+		
+		JButton btMediaGastosTotal = new JButton("Média de Gastos Total");
+		btMediaGastosTotal.setPreferredSize(new Dimension(200,50));
+		btMediaGastosTotal.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new DialogOcupacaoMedia();
+			}
+		});
+		panel.add(btMediaGastosTotal, new GBC(0, 4));
+		
+		JButton btMediaPessoas = new JButton("Média de Pessoas");
+		btMediaPessoas.setPreferredSize(new Dimension(200,50));
+		btMediaPessoas.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new DialogOcupacaoMedia();
+			}
+		});
+		panel.add(btMediaPessoas, new GBC(0, 5));
+		
+		JButton btMediaOcupacao = new JButton("Média de Ocupação");
+		btMediaOcupacao.setPreferredSize(new Dimension(200,50));
+		btMediaOcupacao.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new DialogOcupacaoMedia();
+			}
+		});
+		panel.add(btMediaOcupacao, new GBC(0, 6));
 
 		add(panel, new GBC(0, 0));
 	}
