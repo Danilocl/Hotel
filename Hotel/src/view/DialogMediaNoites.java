@@ -46,23 +46,24 @@ public class DialogMediaNoites extends JDialog {
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
 		setLocationRelativeTo(null);
-		setTitle("Média de Noites");
+		setTitle("M�dia de Noites");
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(200, 300);
+		setSize(700, 400);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setResizable(true);
+		setResizable(false);
 		setModal(true);
 		setVisible(true);
+		pack();
 	}
 
 	/**
 	 * Método que cria e exibe a média anual de noites.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("Média anual: ");
+		JLabel labelMediaAnual = new JLabel("M�dia anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.

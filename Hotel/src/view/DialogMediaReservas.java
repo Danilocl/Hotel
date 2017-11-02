@@ -50,7 +50,7 @@ public class DialogMediaReservas extends JDialog {
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(400, 300);
+		setSize(700, 400);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(true);

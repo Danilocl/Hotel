@@ -46,23 +46,25 @@ public class DialogMediaGastos extends JDialog {
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
 		setLocationRelativeTo(null);
-		setTitle("Média de Gastos Extras");
+		setTitle("M�dia de Gastos Extras");
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(200, 300);
+		setSize(700, 400);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(true);
 		setModal(true);
 		setVisible(true);
+		pack();
+
 	}
 
 	/**
 	 * Método que cria e exibe a média anual de gastos extras.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("Média anual: ");
+		JLabel labelMediaAnual = new JLabel("M�dia anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.
@@ -80,7 +82,8 @@ public class DialogMediaGastos extends JDialog {
 		table = new JTable();
 		// Declaro e instancio o modelo da tabela.
 		OutputTableModel opTableModel = new OutputTableModel();
-		// Chama o método para popular a tabela. Perceba que na passagem de parametro eu
+		// Chama o método para popular a tabela. Perceba que na passagem de parametro
+		// eu
 		// chamo outro método.
 		opTableModel.adicionaTableModel(Operacoes.gastosMensal());
 		// Setando o modelo que ela terá.
@@ -88,7 +91,8 @@ public class DialogMediaGastos extends JDialog {
 		// Instanciando um JScrollPane e setando a tabela em seu contrutor para que o
 		// JScrollPane saiba com quem operar.
 		JScrollPane scrollPane = new JScrollPane(table);
-		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel são coisas
+		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel são
+		// coisas
 		// diferentes.
 		panel.add(scrollPane, new GBC(0, 1).both().gridwh(2, 1));
 		// Adiconando o JPanel na JDialog.
@@ -104,7 +108,8 @@ public class DialogMediaGastos extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Esse método é da própria JDialog e ele apenas serve para destruir a JDialog.
+				// Esse método é da própria JDialog e ele apenas serve para destruir a
+				// JDialog.
 				dispose();
 			}
 		});
