@@ -93,7 +93,7 @@ public class MainFrame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new DialogOcupacaoMedia();
+				new DialogGastosTotal();
 			}
 		});
 		panel.add(btMediaGastosTotal, new GBC(0, 4));
@@ -104,7 +104,7 @@ public class MainFrame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new DialogOcupacaoMedia();
+				new DialogMediaPessoas();
 			}
 		});
 		panel.add(btMediaPessoas, new GBC(0, 5));

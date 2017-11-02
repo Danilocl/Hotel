@@ -112,13 +112,13 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 	 * pessoas no ano e no m�s
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<Float> mediaQtdHospedes(String dataInicial, String dataFinal) {
+	public ArrayList<Integer> mediaQtdHospedes(String dataInicial, String dataFinal) {
 		// Declarando uma {Query} e criando a instrução que será inserido no banco.
-		Query q = entityManager.createQuery("SELECT h.quantida_de_hospede FROM Hospedagem h WHERE h.checkin >= "
+		Query q = entityManager.createQuery("SELECT h.qntHospede FROM Hospedagem h WHERE h.checkin >= "
 				+ dataInicial + " AND h.checkin <= " + dataFinal);
 		// Retornando a lista de resultados. Preciso fazer o casting para ArrayList de
 		// Object pois o método por padrão retorna um {List}.
-		return (ArrayList<Float>) q.getResultList();
+		return (ArrayList<Integer>) q.getResultList();
 	}
 	
 	

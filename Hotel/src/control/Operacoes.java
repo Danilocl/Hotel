@@ -17,6 +17,8 @@ public class Operacoes {
 	// Criando e instanciando um formatador de float para depois ursamos. Ele estÃ¡
 	// definido para arredondar atÃ© duas casas decimais.
 	private static DecimalFormat df = new DecimalFormat("0.00");
+	// novo formato criado para ser usado no método "mediaPessoas"
+	private static DecimalFormat df2 = new DecimalFormat("0");
 
 	/**
 	 * Esse mÃ©todo calcula as mÃ©dia de reservas de todos os meses.
@@ -582,26 +584,36 @@ public class Operacoes {
 	}
 
 	public static String mediaPessoasAnual() {
+		/*
+		 * Mudanca de float para int, pois estava dando erros na conversão,
+		 * provavelmente devido a coluna no banco.Como a média de pessoa não pode ser um
+		 * valor quebrado, eu não vi problemas
+		 */
 		// Instanciando o objeto de acesso ao banco.
 		HospedagemDao hDao = HospedagemDao.getInstancia();
 
 		// Declarando o array de Float e populando ele com o valor de todos os
 		// registros do ano.
-		ArrayList<Float> list = hDao.mediaQtdHospedes("'2017-01-01'", "'2017-12-31'");
+		ArrayList<Integer> list = hDao.mediaQtdHospedes("'2017-01-01'", "'2017-12-31'");
 
 		// Declaro uma variÃ¡vel para guardar o conteudo da soma.
 		// Inicio um FOR para somar todas as noites do mÃªs.
-		float somaDasDiarias = 0.0F;
-		for (float diaria : list) {
-			somaDasDiarias += diaria;
+		int somaDasPessoas = 0;
+		for (int pessoas : list) {
+			somaDasPessoas += pessoas;
 		}
 		// Executando a conta do total de gastos extras dividos pelo nÃºmero de dias do
 		// ano, convertendo para duas casas decimais e retornando para a view.
-		return df.format((float) somaDasDiarias / 365.0);
+		return df2.format(somaDasPessoas / 365.0);
 
 	}
 
 	public static ArrayList<Output> mediaPessoaMes() {
+		/*
+		 * Mudanças Mudanca de float para int, pois estava dando erros na conversão,
+		 * provavelmente devido a coluna no banco.Como a média de pessoa não pode ser um
+		 * valor quebrado, eu não vi problemas
+		 */
 		// Criando e instanciando uma ArryList do tipo Output. Este serÃ¡ nosso retorno.
 		ArrayList<Output> list = new ArrayList<Output>();
 		// Criando e definindo um array de String que vai armazenar os meses. Depois
@@ -620,7 +632,7 @@ public class Operacoes {
 			// chamo o mÃ©todo que retorna a lista passando como parametro a data prÃ©
 			// formatada com a variÃ¡vel I no meio da String para indicar qual o mes que eu
 			// quero.
-			ArrayList<Float> mes = hDao.mediaQtdHospedes("'2017/" + i + "/01'", "'2017/" + i + "/31'");
+			ArrayList<Integer> mes = hDao.mediaQtdHospedes("'2017/" + i + "/01'", "'2017/" + i + "/31'");
 			// Declarando a variÃ¡vel {numeroDeDiasNoMes} para guardarmos quantos dias tem o
 			// mes. Sabemos que alguns tem 30 outros 31 e Fevereiro de 2017 tem 28, alÃ©m de
 			// que, eles nÃ£o possuem uma forma de intercalar muito padronizada. Essa
@@ -667,9 +679,9 @@ public class Operacoes {
 			// *******FIM DAS VERIFICAÃ‡Ã•ES *******
 			// Declaro uma variÃ¡vel para guardar o conteudo da soma.
 			// Inicio um FOR para somar todas as noites do mÃªs.
-			float somaDasDiarias = 0.0F;
-			for (float diaria : mes) {
-				somaDasDiarias += diaria;
+			int somaDasPessoas = 0;
+			for (int pessoas : mes) {
+				somaDasPessoas += pessoas;
 			}
 			// Adiciono a nossa variÃ¡vel {list}, um novo objeto do tipo {Output}, primeiro
 			// eu passo o array {meses} na posiÃ§Ã£o de {i} menos 1, ou seja, no mÃªs
@@ -679,7 +691,7 @@ public class Operacoes {
 			// acabamos de verificar. Eu preciso realizar um casting dos dois nÃºmeros para
 			// {float}, caso o contrÃ¡rio o resultado da conta serÃ¡ inteiro. Ainda nesse
 			// comando eu formato ele para duas casas decimais.
-			list.add(new Output(meses[i - 1], df.format((float) somaDasDiarias / (float) numeroDeDiasNoMes)));
+			list.add(new Output(meses[i - 1], df2.format((int) somaDasPessoas / (int) numeroDeDiasNoMes)));
 			// Nessa linha Ã© a Ãºtima parte da iteraÃ§Ã£o do FOR. Depois de fazer isso ele
 			// repetirÃ¡ essas aÃ§Ãµes mais 11 vezes atÃ© passar por todos os meses.
 		}
@@ -707,7 +719,7 @@ public class Operacoes {
 			// chamo o mÃ©todo que retorna a lista passando como parametro a data prÃ©
 			// formatada com a variÃ¡vel I no meio da String para indicar qual o mes que eu
 			// quero.
-			ArrayList<Float> mes = hDao.mediaQtdHospedes("'2017/" + i + "/01'", "'2017/" + i + "/31'");
+			ArrayList<Float> mes = hDao.mediaDiariaMes("'2017/" + i + "/01'", "'2017/" + i + "/31'");
 			// Declarando a variÃ¡vel {numeroDeDiasNoMes} para guardarmos quantos dias tem o
 			// mes. Sabemos que alguns tem 30 outros 31 e Fevereiro de 2017 tem 28, alÃ©m de
 			// que, eles nÃ£o possuem uma forma de intercalar muito padronizada. Essa
@@ -781,7 +793,7 @@ public class Operacoes {
 
 		// Declarando o array de Float e populando ele com o valor de todos os
 		// registros do ano.
-		ArrayList<Float> list = hDao.mediaQtdHospedes("'2017-01-01'", "'2017-12-31'");
+		ArrayList<Float> list = hDao.mediaDiariaMes("'2017-01-01'", "'2017-12-31'");
 
 		// Declaro uma variÃ¡vel para guardar o conteudo da soma.
 		// Inicio um FOR para somar todas as noites do mÃªs.
