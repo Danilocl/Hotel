@@ -2,9 +2,12 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -32,6 +35,8 @@ public class DialogMediaGastos extends JDialog {
 	 */
 	private JPanel panel = new JPanel(new GridBagLayout());
 
+	Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+
 	/**
 	 * Construtor da classe.
 	 */
@@ -45,7 +50,6 @@ public class DialogMediaGastos extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setLocationRelativeTo(null);
 		setTitle("Média de Gastos Extras");
 		buildMediaAnual();
 		buildTable();
@@ -57,6 +61,8 @@ public class DialogMediaGastos extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
+		setIconImage();
+		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 
 	}
 
@@ -115,5 +121,11 @@ public class DialogMediaGastos extends JDialog {
 		});
 		panel.add(botaoVoltar, new GBC(1, 2).right());
 		add(panel, new GBC(0, 2).both());
+	}
+
+	private void setIconImage() {
+		URL iconUrl = getClass().getResource("/images/logo.png");
+		ImageIcon icon = new ImageIcon(iconUrl);
+		setIconImage(icon.getImage());
 	}
 }

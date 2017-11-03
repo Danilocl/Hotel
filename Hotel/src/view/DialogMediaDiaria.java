@@ -2,9 +2,12 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -31,6 +34,7 @@ public class DialogMediaDiaria extends JDialog {
 	 * {@code JPanel} que montará o layout da {@code JDialog}.
 	 */
 	private JPanel panel = new JPanel(new GridBagLayout());
+	Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
 
 	/**
 	 * Construtor da classe.
@@ -45,7 +49,6 @@ public class DialogMediaDiaria extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setLocationRelativeTo(null);
 		setTitle("M�dia de Diaria");
 		buildMediaAnual();
 		buildTable();
@@ -57,6 +60,8 @@ public class DialogMediaDiaria extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
+		setIconImage();
+		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 	}
 
 	/**
@@ -81,7 +86,8 @@ public class DialogMediaDiaria extends JDialog {
 		table = new JTable();
 		// Declaro e instancio o modelo da tabela.
 		OutputTableModel opTableModel = new OutputTableModel();
-		// Chama o método para popular a tabela. Perceba que na passagem de parametro eu
+		// Chama o método para popular a tabela. Perceba que na passagem de parametro
+		// eu
 		// chamo outro método.
 		opTableModel.adicionaTableModel(Operacoes.diariaMensal());
 		// Setando o modelo que ela terá.
@@ -89,7 +95,8 @@ public class DialogMediaDiaria extends JDialog {
 		// Instanciando um JScrollPane e setando a tabela em seu contrutor para que o
 		// JScrollPane saiba com quem operar.
 		JScrollPane scrollPane = new JScrollPane(table);
-		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel são coisas
+		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel são
+		// coisas
 		// diferentes.
 		panel.add(scrollPane, new GBC(0, 1).both().gridwh(2, 1));
 		// Adiconando o JPanel na JDialog.
@@ -105,11 +112,18 @@ public class DialogMediaDiaria extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Esse método é da própria JDialog e ele apenas serve para destruir a JDialog.
+				// Esse método é da própria JDialog e ele apenas serve para destruir a
+				// JDialog.
 				dispose();
 			}
 		});
 		panel.add(botaoVoltar, new GBC(1, 2).right());
 		add(panel, new GBC(0, 2).both());
+	}
+
+	private void setIconImage() {
+		URL iconUrl = getClass().getResource("/images/logo.png");
+		ImageIcon icon = new ImageIcon(iconUrl);
+		setIconImage(icon.getImage());
 	}
 }

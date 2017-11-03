@@ -2,9 +2,12 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -17,7 +20,9 @@ import control.Operacoes;
 
 public class DialogGastosTotal extends JDialog {
 
+	MainFrame mainFrame;
 	private JTable table;
+	Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
 	/**
 	 * {@code JPanel} que montar√° o layout da {@code JDialog}.
 	 */
@@ -36,7 +41,6 @@ public class DialogGastosTotal extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setLocationRelativeTo(null);
 		setTitle("Gasto Total - MÈdia");
 		buildMediaAnual();
 		buildTable();
@@ -48,6 +52,9 @@ public class DialogGastosTotal extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
+		setIconImage();
+		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
+
 	}
 
 	/**
@@ -107,4 +114,9 @@ public class DialogGastosTotal extends JDialog {
 		add(panel, new GBC(0, 2).both());
 	}
 
+	private void setIconImage() {
+		URL iconUrl = getClass().getResource("/images/logo.png");
+		ImageIcon icon = new ImageIcon(iconUrl);
+		setIconImage(icon.getImage());
+	}
 }

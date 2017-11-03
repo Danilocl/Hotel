@@ -54,7 +54,7 @@ public class OutputTableModel extends AbstractTableModel {
 	public void adicionaTableModel(ArrayList<Output> lista) {
 		// TODO Fabricio, fazer a adicao na tabela. Metodo vai receber uma lista com
 		// todos os meses e vai adicionar na tabela.
-		
+		outputs.addAll(lista);
 	}
 
 }
