@@ -49,7 +49,8 @@ public class DialogMediaDiaria extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("M�dia de Diaria");
+		setTitle("Média Diária");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -59,8 +60,7 @@ public class DialogMediaDiaria extends JDialog {
 		setResizable(true);
 		setModal(true);
 		setVisible(true);
-		pack();
-		setIconImage();
+		pack();		
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 	}
 
@@ -68,7 +68,7 @@ public class DialogMediaDiaria extends JDialog {
 	 * Método que cria e exibe a média anual de diárias.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("M�dia anual: ");
+		JLabel labelMediaAnual = new JLabel("Média Anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.

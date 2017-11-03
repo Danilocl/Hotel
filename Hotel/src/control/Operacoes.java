@@ -261,7 +261,7 @@ public class Operacoes {
 
 		// Criando e definindo um array de String que vai armazenar os meses. Depois
 		// iremos inserir eles junto com os valores mensais.
-		String[] meses = { "Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
+		String[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
 				"Outubro", "Novembro", "Dezembro" };
 		// Criando e instanciando o objeto que irÃ¡ manipular o banco para fazermos as
 		// consultas.
@@ -378,7 +378,7 @@ public class Operacoes {
 		ArrayList<Output> list = new ArrayList<Output>();
 		// Criando e definindo um array de String que vai armazenar os meses. Depois
 		// iremos inserir eles junto com os valores mensais.
-		String[] meses = { "Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
+		String[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
 				"Outubro", "Novembro", "Dezembro" };
 		// Criando e instanciando o objeto que irÃ¡ manipular o banco para fazermos as
 		// consultas.
@@ -507,7 +507,7 @@ public class Operacoes {
 		ArrayList<Output> list = new ArrayList<Output>();
 		// Criando e definindo um array de String que vai armazenar os meses. Depois
 		// iremos inserir eles junto com os valores mensais.
-		String[] meses = { "Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
+		String[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
 				"Outubro", "Novembro", "Dezembro" };
 		// Criando e instanciando o objeto que irÃ¡ manipular o banco para fazermos as
 		// consultas.

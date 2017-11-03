@@ -49,7 +49,8 @@ public class DialogMediaReservas extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("Média de Reservas");
+		setTitle("MÃ©dia - Reservas");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -60,7 +61,6 @@ public class DialogMediaReservas extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
-		// setIconImage();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 
 	}
@@ -69,7 +69,7 @@ public class DialogMediaReservas extends JDialog {
 	 * Metodo que cria e exibe a media anual de reservas.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("Média anual: ");
+		JLabel labelMediaAnual = new JLabel("MÃ©dia Anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o metodo que faz as contas para pegar o valor anual.
@@ -121,7 +121,7 @@ public class DialogMediaReservas extends JDialog {
 		panel.add(botaoVoltar, new GBC(1, 2).right());
 		add(panel, new GBC(0, 2).both());
 	}
-	
+
 	private void setIconImage() {
 		URL iconUrl = getClass().getResource("/images/logo.png");
 		ImageIcon icon = new ImageIcon(iconUrl);

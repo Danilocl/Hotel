@@ -41,7 +41,8 @@ public class DialogGastosTotal extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("Gasto Total - M�dia");
+		setTitle("Gasto Total - Média");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -52,7 +53,6 @@ public class DialogGastosTotal extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
-		setIconImage();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 
 	}
@@ -61,7 +61,7 @@ public class DialogGastosTotal extends JDialog {
 	 * Método que cria e exibe a média anual de diárias.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaGastosTotal = new JLabel("M�dia Gasto Total: ");
+		JLabel labelMediaGastosTotal = new JLabel("Média Anual: ");
 		panel.add(labelMediaGastosTotal, new GBC(0, 0));
 		JTextField tfMediaTotal = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.

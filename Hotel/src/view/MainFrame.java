@@ -44,6 +44,7 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 		setResizable(false);
 		pack();
+		setIconImage();
 
 	}
 
@@ -51,7 +52,7 @@ public class MainFrame extends JFrame {
 
 		JPanel panel = new JPanel(new GridBagLayout());
 
-		JButton btMediaReservas = new JButton("MÈdia de reservas");
+		JButton btMediaReservas = new JButton("M√©dia de Reservas");
 		btMediaReservas.setPreferredSize(new Dimension(200, 50));
 
 		btMediaReservas.addActionListener(new ActionListener() {
@@ -63,7 +64,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaReservas, new GBC(0, 0));
 
-		JButton btMediaNoites = new JButton("MÈdia de noites");
+		JButton btMediaNoites = new JButton("M√©dia de Noites");
 		btMediaNoites.setPreferredSize(new Dimension(200, 50));
 		btMediaNoites.addActionListener(new ActionListener() {
 
@@ -74,7 +75,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaNoites, new GBC(0, 1));
 
-		JButton btMediaDiaria = new JButton("MÈdia de di·rias");
+		JButton btMediaDiaria = new JButton("M√©dia de Di√°rias");
 		btMediaDiaria.setPreferredSize(new Dimension(200, 50));
 		btMediaDiaria.addActionListener(new ActionListener() {
 
@@ -85,7 +86,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaDiaria, new GBC(0, 2));
 
-		JButton btMediaGastos = new JButton("MÈdia de gastos extras");
+		JButton btMediaGastos = new JButton("M√©dia de Gastos Extras");
 		btMediaGastos.setPreferredSize(new Dimension(200, 50));
 		btMediaGastos.addActionListener(new ActionListener() {
 
@@ -96,7 +97,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaGastos, new GBC(0, 3));
 
-		JButton btMediaGastosTotal = new JButton("MÈdia de Gastos Total");
+		JButton btMediaGastosTotal = new JButton("M√©dia de Gastos - Total");
 		btMediaGastosTotal.setPreferredSize(new Dimension(200, 50));
 		btMediaGastosTotal.addActionListener(new ActionListener() {
 
@@ -107,7 +108,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaGastosTotal, new GBC(0, 4));
 
-		JButton btMediaPessoas = new JButton("MÈdia de Pessoas");
+		JButton btMediaPessoas = new JButton("M√©dia de Pessoas");
 		btMediaPessoas.setPreferredSize(new Dimension(200, 50));
 		btMediaPessoas.addActionListener(new ActionListener() {
 
@@ -118,7 +119,7 @@ public class MainFrame extends JFrame {
 		});
 		panel.add(btMediaPessoas, new GBC(0, 5));
 
-		JButton btMediaOcupacao = new JButton("MÈdia de OcupaÁ„o");
+		JButton btMediaOcupacao = new JButton("M√©dia de Ocupa√ß√£o");
 		btMediaOcupacao.setPreferredSize(new Dimension(200, 50));
 		btMediaOcupacao.addActionListener(new ActionListener() {
 
@@ -133,34 +134,10 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setIconImage() {
-		URL iconUrl = getClass().getResource("/images/logo.png");
+		URL iconUrl = getClass().getResource("/images/logo.png");		
 		ImageIcon icon = new ImageIcon(iconUrl);
+		
 		setIconImage(icon.getImage());
 	}
-
-	// public void setAcessibilidade() {
-	// addKeyListener(new KeyListener() {
-	//
-	// @Override
-	// public void keyTyped(KeyEvent e) {
-	// // TODO Auto-generated method stub
-	//
-	// }
-	//
-	// @Override
-	// public void keyReleased(KeyEvent e) {
-	// // TODO Auto-generated method stub
-	//
-	// }
-	//
-	// @Override
-	// public void keyPressed(KeyEvent e) {
-	// if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-	// setVisible(false);
-	// }
-	//
-	// }
-	// });
-	// }
 
 }

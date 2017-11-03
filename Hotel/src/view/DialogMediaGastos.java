@@ -50,7 +50,8 @@ public class DialogMediaGastos extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("M�dia de Gastos Extras");
+		setTitle("Média - Gastos Extras");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -61,7 +62,6 @@ public class DialogMediaGastos extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
-		setIconImage();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 
 	}
@@ -70,7 +70,7 @@ public class DialogMediaGastos extends JDialog {
 	 * Método que cria e exibe a média anual de gastos extras.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaAnual = new JLabel("M�dia anual: ");
+		JLabel labelMediaAnual = new JLabel("Média Anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.

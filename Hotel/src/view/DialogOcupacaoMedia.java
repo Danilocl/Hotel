@@ -40,7 +40,8 @@ public class DialogOcupacaoMedia extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("Média de Ocupação");
+		setTitle("MÃ©dia OcupaÃ§Ã£o");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -51,7 +52,6 @@ public class DialogOcupacaoMedia extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
-		// setIconImage();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 	}
 
@@ -59,13 +59,13 @@ public class DialogOcupacaoMedia extends JDialog {
 	 * MÃ©todo que cria e exibe a mÃ©dia anual de diÃ¡rias.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaGastosOcupação = new JLabel("Média Ocupação: ");
-		panel.add(labelMediaGastosOcupação, new GBC(0, 0));
-		JTextField tfMediaOcupação = new JTextField(20);
+		JLabel labelMediaGastosOcupa = new JLabel("MÃ©dia Anual: ");
+		panel.add(labelMediaGastosOcupa, new GBC(0, 0));
+		JTextField tfMediaOcupacao = new JTextField(20);
 		// Chamando o mÃ©todo que faz as contas para pegar o valor anual.
-		tfMediaOcupação.setText(Operacoes.mediaOcupacaoAnual());
-		tfMediaOcupação.setEditable(false);
-		panel.add(tfMediaOcupação, new GBC(1, 0).horizontal());
+		tfMediaOcupacao.setText(Operacoes.mediaOcupacaoAnual());
+		tfMediaOcupacao.setEditable(false);
+		panel.add(tfMediaOcupacao, new GBC(1, 0).horizontal());
 		add(panel, new GBC(0, 0));
 	}
 

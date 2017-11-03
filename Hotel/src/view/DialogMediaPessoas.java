@@ -40,7 +40,8 @@ public class DialogMediaPessoas extends JDialog {
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
-		setTitle("M�dia de Diaria");
+		setTitle("Média - Pessoas");
+		setIconImage();
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
@@ -51,7 +52,6 @@ public class DialogMediaPessoas extends JDialog {
 		setModal(true);
 		setVisible(true);
 		pack();
-		// setIconImage();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
 	}
 
@@ -59,7 +59,7 @@ public class DialogMediaPessoas extends JDialog {
 	 * Método que cria e exibe a média anual de diárias.
 	 */
 	private void buildMediaAnual() {
-		JLabel labelMediaGastosExtras = new JLabel("M�dia Pessoas: ");
+		JLabel labelMediaGastosExtras = new JLabel("Média Anual: ");
 		panel.add(labelMediaGastosExtras, new GBC(0, 0));
 		JTextField tfMediaExtras = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.
