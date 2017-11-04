@@ -45,7 +45,7 @@ public class DialogMediaPessoas extends JDialog {
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(200, 300);
+		setSize(500, 400);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(true);

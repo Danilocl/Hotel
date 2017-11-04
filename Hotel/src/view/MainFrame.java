@@ -38,12 +38,14 @@ public class MainFrame extends JFrame {
 		setLayout(new GridBagLayout());
 		setTitle("Estatisticas Hospedagem");
 		buildButtonPanel();
-		setSize(250, 400);
+		setSize(300, 400);
 		setMinimumSize(new Dimension(250, 400));
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage();
 		setVisible(true);
+		setResizable(true);
+		pack();
 
 	}
 

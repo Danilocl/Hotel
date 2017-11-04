@@ -46,13 +46,14 @@ public class DialogGastosTotal extends JDialog {
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(200, 300);
+		setSize(500, 400);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setResizable(true);
 		setModal(true);
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
+		setResizable(true);
 		setVisible(true);
+		
 
 	}
 
