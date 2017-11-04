@@ -36,15 +36,14 @@ public class MainFrame extends JFrame {
 
 	private void build() {
 		setLayout(new GridBagLayout());
+		setTitle("Estatisticas Hospedagem");
 		buildButtonPanel();
-		setSize(300, 200);
-		setMinimumSize(new Dimension(200, 200));
+		setSize(250, 400);
+		setMinimumSize(new Dimension(250, 400));
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		setResizable(false);
-		pack();
 		setIconImage();
+		setVisible(true);
 
 	}
 
@@ -53,7 +52,7 @@ public class MainFrame extends JFrame {
 		JPanel panel = new JPanel(new GridBagLayout());
 
 		JButton btMediaReservas = new JButton("Média de Reservas");
-		btMediaReservas.setPreferredSize(new Dimension(200, 50));
+		btMediaReservas.setPreferredSize(new Dimension(230, 50));
 
 		btMediaReservas.addActionListener(new ActionListener() {
 
@@ -65,7 +64,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaReservas, new GBC(0, 0));
 
 		JButton btMediaNoites = new JButton("Média de Noites");
-		btMediaNoites.setPreferredSize(new Dimension(200, 50));
+		btMediaNoites.setPreferredSize(new Dimension(230, 50));
 		btMediaNoites.addActionListener(new ActionListener() {
 
 			@Override
@@ -76,7 +75,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaNoites, new GBC(0, 1));
 
 		JButton btMediaDiaria = new JButton("Média de Diárias");
-		btMediaDiaria.setPreferredSize(new Dimension(200, 50));
+		btMediaDiaria.setPreferredSize(new Dimension(230, 50));
 		btMediaDiaria.addActionListener(new ActionListener() {
 
 			@Override
@@ -87,7 +86,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaDiaria, new GBC(0, 2));
 
 		JButton btMediaGastos = new JButton("Média de Gastos Extras");
-		btMediaGastos.setPreferredSize(new Dimension(200, 50));
+		btMediaGastos.setPreferredSize(new Dimension(230, 50));
 		btMediaGastos.addActionListener(new ActionListener() {
 
 			@Override
@@ -98,7 +97,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaGastos, new GBC(0, 3));
 
 		JButton btMediaGastosTotal = new JButton("Média de Gastos - Total");
-		btMediaGastosTotal.setPreferredSize(new Dimension(200, 50));
+		btMediaGastosTotal.setPreferredSize(new Dimension(230, 50));
 		btMediaGastosTotal.addActionListener(new ActionListener() {
 
 			@Override
@@ -109,7 +108,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaGastosTotal, new GBC(0, 4));
 
 		JButton btMediaPessoas = new JButton("Média de Pessoas");
-		btMediaPessoas.setPreferredSize(new Dimension(200, 50));
+		btMediaPessoas.setPreferredSize(new Dimension(230, 50));
 		btMediaPessoas.addActionListener(new ActionListener() {
 
 			@Override
@@ -120,7 +119,7 @@ public class MainFrame extends JFrame {
 		panel.add(btMediaPessoas, new GBC(0, 5));
 
 		JButton btMediaOcupacao = new JButton("Média de Ocupação");
-		btMediaOcupacao.setPreferredSize(new Dimension(200, 50));
+		btMediaOcupacao.setPreferredSize(new Dimension(230, 50));
 		btMediaOcupacao.addActionListener(new ActionListener() {
 
 			@Override

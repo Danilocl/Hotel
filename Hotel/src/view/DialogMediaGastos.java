@@ -55,14 +55,13 @@ public class DialogMediaGastos extends JDialog {
 		buildMediaAnual();
 		buildTable();
 		buildBotaoVoltar();
-		setSize(700, 400);
+		setSize(200, 300);
 		setMinimumSize(new Dimension(200, 300));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(true);
 		setModal(true);
-		setVisible(true);
-		pack();
 		setLocation((tela.width - this.getSize().width) / 2, (tela.height - this.getSize().height) / 2);
+		setVisible(true);
 
 	}
 

@@ -39,7 +39,7 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 	@SuppressWarnings("unchecked")
 	public ArrayList<Integer> mediaReservasMes(String dataInicial, String dataFinal) {
 		// Declarando uma {Query} e criando a instruÃ§Ã£o que serÃ¡ inserido no banco.
-		Query q = entityManager.createQuery("SELECT h.hospedagem_id FROM Hospedagem h WHERE h.checkin >= " + dataInicial
+		Query q = entityManager.createQuery("SELECT h.qntHospede FROM Hospedagem h WHERE h.checkin >= " + dataInicial
 				+ " AND h.checkin <= " + dataFinal);
 		// Retornando a lista de resultados. Preciso fazer o casting para ArrayList de
 		// Object pois o mÃ©todo por padrÃ£o retorna um {List}.
@@ -108,8 +108,8 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 	}
 
 	/*
-	 * método que retorna a quantidade de hospedes para fazer o cálculo da média de
-	 * pessoas no ano e no mês
+	 * mï¿½todo que retorna a quantidade de hospedes para fazer o cï¿½lculo da mï¿½dia de
+	 * pessoas no ano e no mï¿½s
 	 */
 	@SuppressWarnings("unchecked")
 	public ArrayList<Integer> mediaQtdHospedes(String dataInicial, String dataFinal) {

@@ -610,7 +610,7 @@ public class Operacoes {
 		}
 		// Executando a conta do total de gastos extras dividos pelo nÃºmero de dias do
 		// ano, convertendo para duas casas decimais e retornando para a view.
-		return df2.format((int) somaDasReservas / list.size());
+		return df2.format((int) somaDasReservas / 365);
 
 	}
 
@@ -689,6 +689,7 @@ public class Operacoes {
 			for (int pessoas : mes) {
 				somaDasReservas += pessoas;
 			}
+			System.out.println(i + " - " + somaDasReservas);
 			// Adiciono a nossa variÃ¡vel {list}, um novo objeto do tipo {Output}, primeiro
 			// eu passo o array {meses} na posiÃ§Ã£o de {i} menos 1, ou seja, no mÃªs
 			// correspondente ao mÃªs que nÃ³s buscamos. O segundo parÃ¢metro que passo Ã© o
@@ -776,6 +777,8 @@ public class Operacoes {
 			for (float diaria : mes) {
 				somaDasDiarias += diaria;
 			}
+			System.out.println(mes.size());
+			System.out.println(somaDasDiarias);
 			// Adiciono a nossa variÃ¡vel {list}, um novo objeto do tipo {Output}, primeiro
 			// eu passo o array {meses} na posiÃ§Ã£o de {i} menos 1, ou seja, no mÃªs
 			// correspondente ao mÃªs que nÃ³s buscamos. O segundo parÃ¢metro que passo Ã© o
@@ -784,7 +787,7 @@ public class Operacoes {
 			// acabamos de verificar. Eu preciso realizar um casting dos dois nÃºmeros para
 			// {float}, caso o contrÃ¡rio o resultado da conta serÃ¡ inteiro. Ainda nesse
 			// comando eu formato ele para duas casas decimais.
-			list.add(new Output(meses[i - 1], df2.format((int) somaDasDiarias / (int) numeroDeDiasNoMes)));
+			list.add(new Output(meses[i - 1], df.format((int) somaDasDiarias / numeroDeDiasNoMes)));
 			// Nessa linha Ã© a Ãºtima parte da iteraÃ§Ã£o do FOR. Depois de fazer isso ele
 			// repetirÃ¡ essas aÃ§Ãµes mais 11 vezes atÃ© passar por todos os meses.
 		}
