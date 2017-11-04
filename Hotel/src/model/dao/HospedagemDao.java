@@ -120,5 +120,7 @@ public class HospedagemDao extends DaoGenerico<Hospedagem> {
 		// Object pois o método por padrão retorna um {List}.
 		return (ArrayList<Integer>) q.getResultList();
 	}
+	
+	
 
 }

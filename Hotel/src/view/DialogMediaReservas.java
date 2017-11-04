@@ -5,8 +5,8 @@ import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
-
+import java.net.URL;import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -44,8 +44,8 @@ public class DialogMediaReservas extends JDialog {
 	}
 
 	/**
-	 * Método que posiciona e chama os outros método responsaveis pelo contúdo da
-	 * {@code JDialog}.
+	 * Método que posiciona e chama os outros método responsaveis pelo contúdo
+	 * da {@code JDialog}.
 	 */
 	private void buildDialog() {
 		setLayout(new GridBagLayout());
@@ -68,6 +68,7 @@ public class DialogMediaReservas extends JDialog {
 	 * Metodo que cria e exibe a media anual de reservas.
 	 */
 	private void buildMediaAnual() {
+		EntityManager entityManager;
 		JLabel labelMediaAnual = new JLabel("Média Anual: ");
 		panel.add(labelMediaAnual, new GBC(0, 0));
 		JTextField tfMediaAnual = new JTextField(20);
@@ -86,16 +87,19 @@ public class DialogMediaReservas extends JDialog {
 		table = new JTable();
 		// Declaro e instancio o modelo da tabela.
 		OutputTableModel opTableModel = new OutputTableModel();
-		// Chama o método para popular a tabela. Perceba que na passagem de parametro
+		// Chama o método para popular a tabela. Perceba que na passagem de
+		// parametro
 		// eu
 		// chamo outro método.
 		opTableModel.adicionaTableModel(Operacoes.reservaMensal());
 		// Setando o modelo que ela terá.
 		table.setModel(opTableModel);
-		// Instanciando um JScrollPane e setando a tabela em seu contrutor para que o
+		// Instanciando um JScrollPane e setando a tabela em seu contrutor para
+		// que o
 		// JScrollPane saiba com quem operar.
 		JScrollPane scrollPane = new JScrollPane(table);
-		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel são
+		// Adicionando o JScrollPane no JPanel. ATENÇÃO: JScrollPane e JPanel
+		// são
 		// coisas
 		// diferentes.
 		panel.add(scrollPane, new GBC(0, 1).both().gridwh(2, 1));
@@ -112,7 +116,8 @@ public class DialogMediaReservas extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Esse método é da própria JDialog e ele apenas serve para destruir a
+				// Esse método é da própria JDialog e ele apenas serve para
+				// destruir a
 				// JDialog.
 				dispose();
 			}

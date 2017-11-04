@@ -66,6 +66,7 @@ public class DialogGastosTotal extends JDialog {
 		JTextField tfMediaTotal = new JTextField(20);
 		// Chamando o método que faz as contas para pegar o valor anual.
 		tfMediaTotal.setText(Operacoes.gastosTotalAnual());
+		
 		tfMediaTotal.setEditable(false);
 		panel.add(tfMediaTotal, new GBC(1, 0).horizontal());
 		add(panel, new GBC(0, 0));
